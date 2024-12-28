@@ -1,0 +1,21 @@
+.side-bar {
+    position: absolute;
+    z-index: 5;
+    background: black;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgb(17, 17, 17);
+    color: rgb(200, 197, 197);
+    border: 1px solid rgba(73, 72, 72, 0.937);
+    margin: 13px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.side-bar h3{
+    font-size: 18px;
+}

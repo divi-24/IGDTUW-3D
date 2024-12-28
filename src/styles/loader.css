@@ -1,0 +1,37 @@
+.loadingScreen {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgb(35, 34, 34), black);
+    user-select: none;
+}
+.loadingScreen h3 {
+    font-size: 25px;
+    margin-top: 30px;
+}
+.loader {
+  height: 4px;
+  width: 230px;
+  --c: no-repeat linear-gradient(#e8e8e8 0 0);
+  background: var(--c), var(--c), #999999;
+  background-size: 60% 100%;
+  animation: l16 2s infinite;
+}
+@keyframes l16 {
+  0% {
+    background-position: -150% 0, -150% 0;
+  }
+  66% {
+    background-position: 250% 0, -150% 0;
+  }
+  100% {
+    background-position: 250% 0, 250% 0;
+  }
+}

@@ -1,0 +1,18 @@
+
+.select-preset {
+    border: none;
+    outline: none;
+    position: absolute;
+    padding: 10px 20px;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    margin: 13px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: rgb(33, 33, 33);
+    color: rgb(200, 197, 197);
+    border: 1px solid rgba(73, 72, 72, 0.937);
+    margin: 13px;
+    text-transform: capitalize;
+}

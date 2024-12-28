@@ -1,0 +1,30 @@
+button {
+    border: none;
+    outline: none;
+    background-color: none;
+}
+
+#mousepointer {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 100%;
+    transition: 0.03s;
+    left: -50px;
+    z-index: 1000002;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    overflow: hidden;
+}
+#mousepointer div {
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 100%;
+}
