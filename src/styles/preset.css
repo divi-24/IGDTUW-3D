@@ -16,3 +16,9 @@
     margin: 13px;
     text-transform: capitalize;
 }
+
+@media only screen and (max-width: 600px) {
+    .select-preset {
+        display: none;
+    }
+}

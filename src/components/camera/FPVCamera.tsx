@@ -25,12 +25,14 @@ const FPVCamera = ({ debug = false }) => {
   return (
     <CurveCamera
       debug={debug}
-      scrollSpeed={0.00005}
+      scrollSpeed={0.0028}
       lerpFactor={0.1}
       curve={curve}
       position={[0, -10, 135]}
       scrollProgress={fpvScrollProgress}
       setScrollProgress={setFpvScrollProgress}
+      forwardButtonId="fpvForward"
+      backwardButtonId="fpvBackward"
     />
   );
 };

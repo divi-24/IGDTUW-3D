@@ -1,4 +1,5 @@
-.side-bar {
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.modal-toogle {
     position: absolute;
     z-index: 5;
     background: black;
@@ -14,8 +15,95 @@
     padding: 10px 12px;
     display: flex;
     align-items: center;
+    cursor: pointer;
     justify-content: center;
 }
-.side-bar h3{
+.modal-toogle h3{
     font-size: 18px;
+}
+
+.modal {
+    font-family: "Inter", serif;
+    width: 50%;
+    min-height: 60%;
+    max-height: 90%;
+    background-color: rgb(236, 236, 236);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    border-radius: 10px;
+    overflow-x: hidden;
+    color: #3f3e3e;
+    /* box-shadow: 0px 5px 10px 2px rgba(65, 64, 64, 0.284); */
+    animation: slideUp 0.5s;
+}
+@keyframes slideUp {
+    from {
+        left: -150%;
+    }   
+    to {
+        left: 50%;
+    }
+}
+.modal-overlay {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(7, 7, 7, 0.932);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 7;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 4px solid #3f3e3e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.modal-header h2 {
+    font-weight: bold;
+    font-family: "Inter", serif;
+}
+.modal-close {
+    cursor: pointer;
+}
+.modal-close:hover {
+    opacity: 0.6s;
+}
+.modal-content {
+    padding: 18px;
+}
+.modal-content p {
+    font-family: "Inter", serif;
+}
+
+@media only screen and (max-width: 850px) {
+    .modal {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .modal {
+        width: 80%;
+    }
+    .modal-header h2 {
+        font-size: 20px;
+    }
+    .modal-content p {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .modal {
+        width: 100vw;
+        height: 100vh;
+    }
 }

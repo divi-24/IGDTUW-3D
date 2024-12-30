@@ -1,8 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { Context } from "../types/Context";
-import { InfoBox } from "../types/InfoBox";
-import { InfoBoxesData } from "../components/constant/InfoBox";
-import { preset } from "../components/constant/preset";
+import { INFO_BOXES_DATA } from "../constant/infoBox";
+import { preset } from "../constant/preset";
 
 export const AppContext = createContext<Context>({} as Context);
 
@@ -15,10 +14,12 @@ export const Provider = ({ children }: ProviderProps) => {
   const [droneScrollProgress, setDroneScrollProgress] = useState<number>(0);
   const [gardenScrollProgress, setGardenScrollProgress] = useState<number>(0);
   const [tab, setTab] = useState<number>(0);
+  const [tabView, setTabView] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
   const [sound, setSound] = useState<boolean>(true);
   const [preset, setPreset] = useState<preset>("city");
-  const [infoBoxes, setInfoBoxes] = useState<InfoBox[]>(InfoBoxesData as InfoBox[]);
+  const infoBoxes = INFO_BOXES_DATA
+  
 
   const store = {
     view,
@@ -32,13 +33,14 @@ export const Provider = ({ children }: ProviderProps) => {
     loading, 
     setLoading,
     infoBoxes,
-    setInfoBoxes,
     tab,
     setTab,
     sound, 
     setSound,
     preset,
-    setPreset
+    setPreset,
+    tabView,
+    setTabView
   };
   return <AppContext.Provider value={store}>{children}</AppContext.Provider>;
 };

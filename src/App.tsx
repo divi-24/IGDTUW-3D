@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import { Tab } from "./components/tab";
 import { SoundButton } from "./components/sound";
 import { PresetButton } from "./components/environment";
+import { MovementControls } from "./components/controls";
 
 const App = () => {
   const { view, setView } = useStore();
@@ -15,6 +16,7 @@ const App = () => {
       <div className="three-view">
         <Tab />
         <SoundButton />
+        <MovementControls />
         <PresetButton />
         <Suspense fallback={<Loader />}>
           <select

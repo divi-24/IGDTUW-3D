@@ -1,6 +1,6 @@
 import React from "react";
 import { InfoBox } from "./InfoBox";
-import { preset } from "../components/constant/preset";
+import { preset } from "../constant/preset";
 
 
 
@@ -16,11 +16,12 @@ export interface Context {
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   infoBoxes: InfoBox[];
-  setInfoBoxes: React.Dispatch<React.SetStateAction<InfoBox[]>>;
   tab: number;
   setTab: React.Dispatch<React.SetStateAction<number>>;
   sound: boolean;
   setSound: React.Dispatch<React.SetStateAction<boolean>>;
   preset: preset
   setPreset: React.Dispatch<React.SetStateAction<preset>>
+  tabView: boolean
+  setTabView: React.Dispatch<React.SetStateAction<boolean>>
 }

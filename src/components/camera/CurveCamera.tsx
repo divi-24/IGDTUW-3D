@@ -12,6 +12,8 @@ type CurveCameraProps = {
   position: [number, number, number];
   scrollProgress: number;
   setScrollProgress: React.Dispatch<React.SetStateAction<number>>;
+  forwardButtonId: string;
+  backwardButtonId: string;
 };
 
 const CurveCamera = ({
@@ -22,6 +24,8 @@ const CurveCamera = ({
   scrollSpeed,
   scrollProgress,
   setScrollProgress,
+  forwardButtonId,
+  backwardButtonId,
 }: CurveCameraProps) => {
   const cameraRef = useRef<PC>(null);
   const controlsRef = useRef<CameraControls>(null);
@@ -30,13 +34,32 @@ const CurveCamera = ({
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
-      targetScrollProgress.current += e.deltaY * scrollSpeed;
+      const v = targetScrollProgress.current + Math.sign(e.deltaY) * scrollSpeed;
+      if (v >= 0) {
+        targetScrollProgress.current = v
+      } else {
+        targetScrollProgress.current = -1 * v
+      }
     };
 
-    document.addEventListener("wheel", handleWheel);
+    const handleForwardMovement = () => {
+      targetScrollProgress.current += 1 * scrollSpeed * 3
+    }
 
+    const handleBackwardMovement = () => {
+      if (targetScrollProgress.current > 0) {
+        targetScrollProgress.current -= -1 * scrollSpeed * 3
+      }
+    }
+
+    document.getElementById(forwardButtonId)?.addEventListener("click", handleForwardMovement)
+    document.getElementById(backwardButtonId)?.addEventListener("click", handleBackwardMovement)
+
+    document.addEventListener("wheel", handleWheel);
     return () => {
       document.removeEventListener("wheel", handleWheel);
+      document.getElementById(forwardButtonId)?.removeEventListener("click", handleForwardMovement)
+      document.getElementById(backwardButtonId)?.removeEventListener("click", handleBackwardMovement)
     };
   }, []);
 

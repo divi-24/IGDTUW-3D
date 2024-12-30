@@ -24,7 +24,7 @@ const View = () => {
       <directionalLight
         castShadow
         position={[5, 10, 5]}
-        intensity={1.5}
+        intensity={1}
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
         shadow-camera-far={50}
@@ -44,10 +44,10 @@ const View = () => {
 
       <EffectComposer>
         <Bloom
-          intensity={0.4} // Strength of bloom
-          luminanceThreshold={0.3} // Minimum luminance level for bloom
-          luminanceSmoothing={0.3} // Smoothing level for luminance
-          height={300} // Resolution of bloom effect
+          intensity={0.3}
+          luminanceThreshold={0.3}
+          luminanceSmoothing={0.3}
+          height={300}
         />
       </EffectComposer>
     </Canvas>

@@ -1,6 +1,6 @@
 import { useStore } from "../../context";
 import "../../styles/preset.css";
-import { preset, presetList } from "../constant/preset";
+import { preset, presetList } from "../../constant/preset";
 
 const PresetButton = () => {
   const { setPreset, preset } = useStore();

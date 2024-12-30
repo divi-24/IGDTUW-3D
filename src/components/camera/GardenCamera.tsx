@@ -18,6 +18,8 @@ const GardenCamera = ({ debug = true }) => {
       position={[0, 0, -27]}
       scrollProgress={gardenScrollProgress}
       setScrollProgress={setGardenScrollProgress}
+      forwardButtonId="gardenForward"
+      backwardButtonId="gardenBackward"
     />
   );
 };

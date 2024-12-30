@@ -2,7 +2,7 @@
   border: none;
   outline: none;
   position: absolute;
-  z-index: 4;
+  z-index: 10;
   padding: 10px 15px;
   display: flex;
   align-items: center;
