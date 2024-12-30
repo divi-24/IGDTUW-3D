@@ -17,7 +17,7 @@ export const Provider = ({ children }: ProviderProps) => {
   const [tab, setTab] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
   const [sound, setSound] = useState<boolean>(true);
-  const [preset, setPreset] = useState<preset>("night");
+  const [preset, setPreset] = useState<preset>("city");
   const [infoBoxes, setInfoBoxes] = useState<InfoBox[]>(InfoBoxesData as InfoBox[]);
 
   const store = {

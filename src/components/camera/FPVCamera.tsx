@@ -17,7 +17,7 @@ const FPVCamera = ({ debug = false }) => {
     new Vector3(42, -7, -87),
     new Vector3(44, -7, -45),
     new Vector3(44, -7, 10),
-    new Vector3(43, -7, 55),
+    new Vector3(42, -7, 55),
     new Vector3(20, -9, 85),
     new Vector3(0, -7, 95),
   ]);
@@ -25,7 +25,7 @@ const FPVCamera = ({ debug = false }) => {
   return (
     <CurveCamera
       debug={debug}
-      scrollSpeed={0.0005}
+      scrollSpeed={0.00005}
       lerpFactor={0.1}
       curve={curve}
       position={[0, -10, 135]}
