@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import "../../styles/model.css";
-import { Sky, Stats } from "@react-three/drei";
+import { Sky } from "@react-three/drei";
 import Camera from "../camera";
 import { Model } from "../models";
 import { PointerCollections } from "../pointer";
@@ -17,7 +17,7 @@ const View = () => {
         turbidity={0.5}
       />
       <Environment />
-      <Stats />
+      {/* <Stats /> */}
 
       <ambientLight color="white" intensity={0.3} position={[0, 10, 0]} />
       {/* <directionalLight position={[0, -10, 180]} intensity={1} color="white" castShadow /> */}
