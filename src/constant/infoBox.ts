@@ -85,3 +85,7 @@ export const INFO_BOXES_DATA: InfoBox[] = [
         text: "The centrally located Auditorium at IGDTUW is a landmark facility, prominently visible upon entering the campus. With a seating capacity of over 1,000, it serves as a premier venue for hosting seminars, conferences, cultural events, and academic gatherings. Designed with advanced acoustics, modern lighting, and cutting-edge audio-visual systems, the Auditorium ensures an engaging and immersive experience for every attendee. Its spacious layout and strategic location make it a vital hub for campus activities, reflecting IGDTUW's dedication to academic excellence, innovation, and holistic student development."
     },
 ]
+
+export const infoBoxContent = {
+    // ... existing content ...
+}

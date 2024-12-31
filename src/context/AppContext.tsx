@@ -2,8 +2,35 @@ import { createContext, useContext, useState } from "react";
 import { Context } from "../types/Context";
 import { INFO_BOXES_DATA } from "../constant/infoBox";
 import { preset } from "../constant/preset";
+import { Vector3 } from "three";
 
-export const AppContext = createContext<Context>({} as Context);
+interface AppContextType {
+  view: number;
+  setView: (view: number) => void;
+  fpvScrollProgress: number;
+  setFpvScrollProgress: (fpvScrollProgress: number) => void;
+  droneScrollProgress: number;
+  setDroneScrollProgress: (droneScrollProgress: number) => void;
+  gardenScrollProgress: number;
+  setGardenScrollProgress: (gardenScrollProgress: number) => void;
+  loading: boolean;
+  setLoading: (loading: boolean) => void;
+  infoBoxes: typeof INFO_BOXES_DATA;
+  tab: number;
+  setTab: (tab: number) => void;
+  sound: boolean;
+  setSound: (sound: boolean) => void;
+  preset: preset;
+  setPreset: (preset: preset) => void;
+  tabView: boolean;
+  setTabView: (tabView: boolean) => void;
+  selectedBuilding: string | null;
+  setSelectedBuilding: (building: string | null) => void;
+  cameraPosition: Vector3;
+  setCameraPosition: (position: Vector3) => void;
+}
+
+export const AppContext = createContext<AppContextType>({} as AppContextType);
 
 type ProviderProps = {
   children: React.ReactNode;
@@ -19,6 +46,8 @@ export const Provider = ({ children }: ProviderProps) => {
   const [sound, setSound] = useState<boolean>(true);
   const [preset, setPreset] = useState<preset>("city");
   const infoBoxes = INFO_BOXES_DATA
+  const [selectedBuilding, setSelectedBuilding] = useState<string | null>(null);
+  const [cameraPosition, setCameraPosition] = useState<Vector3>(new Vector3());
   
 
   const store = {
@@ -40,7 +69,11 @@ export const Provider = ({ children }: ProviderProps) => {
     preset,
     setPreset,
     tabView,
-    setTabView
+    setTabView,
+    selectedBuilding,
+    setSelectedBuilding,
+    cameraPosition,
+    setCameraPosition
   };
   return <AppContext.Provider value={store}>{children}</AppContext.Provider>;
 };

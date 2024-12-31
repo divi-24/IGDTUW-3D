@@ -7,6 +7,7 @@ import { Tab } from "./components/tab";
 import { SoundButton } from "./components/sound";
 import { PresetButton } from "./components/environment";
 import { MovementControls } from "./components/controls";
+import { NavigationBar } from "./components/navigation";
 
 const App = () => {
   const { view, setView } = useStore();
@@ -30,6 +31,7 @@ const App = () => {
             <option value={2}>Drone View</option>
             <option value={3}>Garden View</option>
           </select>
+          <NavigationBar />
           <View />
         </Suspense>
       </div>

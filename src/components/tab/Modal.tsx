@@ -1,40 +1,41 @@
-import { FaTimes } from "react-icons/fa";
 import "../../styles/tab.css";
-import { InfoBox } from "../../types/InfoBox";
+import { useStore } from "../../context";
 
+const Modal = () => {
+  const { 
+    tab, 
+    setTab, 
+    setTabView, 
+    setSelectedBuilding, 
+    infoBoxes
+  } = useStore();
+  
+  const handleClose = () => {
+    // Order matters here - first clear selected building
+    setSelectedBuilding(null);
+    // Then close the dialog
+    setTabView(false);
+    setTab(0);
+  };
 
-type InfoModalProps = {
-    data: InfoBox | undefined,
-    view: boolean,
-    setView: React.Dispatch<React.SetStateAction<boolean>>
-}
+  const data = infoBoxes.find(box => box.key === tab);
+  if (!data) return null;
 
-const Modal = ({ data, view, setView }: InfoModalProps) => {
-
-    if (!view) {
-        return <></>
-    }
-
-    return (
-        <>
-            <div className="modal-overlay" />
-            <div className="modal">
-                <div className="modal-header">
-                    <h2>{data?.name}</h2>
-                    <span className="modal-close" onClick={() => setView(false)}><FaTimes color="#3f3e3e" size={30} /></span>
-                </div>
-
-                <div className="modal-content">
-                    {data?.text?.split("\n").map(line => (
-                        <>
-                            <div dangerouslySetInnerHTML={{ __html: line }}></div>
-                            <br />
-                        </>
-                    ))}
-                </div>
+  return (
+    <div className="info-dialog">
+      <div className="info-content">
+        <button className="close-button" onClick={handleClose}>×</button>
+        <h3>{data.name}</h3>
+        <div className="info-text">
+          {data?.text?.split("\n").map((line, index) => (
+            <div key={index}>
+              <div dangerouslySetInnerHTML={{ __html: line }}></div>
             </div>
-        </>
-    )
-}
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Modal
+export default Modal;

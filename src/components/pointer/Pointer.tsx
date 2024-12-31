@@ -1,7 +1,6 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { Group } from "three";
-import { useStore } from "../../context";
 
 const Pointer = ({
   position,
@@ -14,7 +13,6 @@ const Pointer = ({
 }) => {
   const ref = useRef<Group>(null);
   const [hover, setHover] = useState<boolean>(false);
-  const { setTab, setTabView } = useStore();
 
   useFrame(() => {
     if (ref.current && !hover) {
@@ -26,17 +24,11 @@ const Pointer = ({
     }
   });
 
-  const handleClick = () => {
-    setTab(id)
-    setTabView(true)
-  }
-
   return (
     <group
       ref={ref}
       scale={hover ? 3 : 2}
       rotation={[0, 0, Math.PI]}
-      onClick={handleClick}
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
     >
