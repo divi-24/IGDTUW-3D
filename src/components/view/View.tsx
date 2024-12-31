@@ -5,8 +5,7 @@ import Camera from "../camera";
 import { Model } from "../models";
 import { PointerCollections } from "../pointer";
 import { Environment } from "../environment";
-import { Bloom, EffectComposer, SSAO } from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
 const View = () => {
   return (
@@ -49,12 +48,6 @@ const View = () => {
           luminanceThreshold={0.3}
           luminanceSmoothing={0.3}
           height={300}
-        />
-        <SSAO
-          blendFunction={BlendFunction.MULTIPLY} // Use NORMAL to see the effect
-          samples={31}
-          radius={5}
-          intensity={30}
         />
       </EffectComposer>
     </Canvas>
