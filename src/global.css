@@ -7,7 +7,7 @@ button {
 * {
     scrollbar-width: thin;
     scrollbar-color: #b0b0b0 #ffffff;
-    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 *::-webkit-scrollbar {

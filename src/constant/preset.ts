@@ -6,9 +6,7 @@ export type preset =
   | "lobby"
   | "night"
   | "park"
-  | "studio"
-  | "sunset"
-  | "warehouse";
+  | "sunset";
 export const presetList = [
   "apartment",
   "city",
@@ -17,7 +15,5 @@ export const presetList = [
   "lobby",
   "night",
   "park",
-  "studio",
-  "sunset",
-  "warehouse",
+  "sunset"
 ];

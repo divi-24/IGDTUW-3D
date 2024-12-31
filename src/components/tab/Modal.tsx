@@ -27,7 +27,7 @@ const Modal = ({ data, view, setView }: InfoModalProps) => {
                 <div className="modal-content">
                     {data?.text?.split("\n").map(line => (
                         <>
-                            <p>{line}</p>
+                            <div dangerouslySetInnerHTML={{ __html: line }}></div>
                             <br />
                         </>
                     ))}

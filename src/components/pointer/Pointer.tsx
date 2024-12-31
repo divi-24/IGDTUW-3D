@@ -12,7 +12,7 @@ const Pointer = ({
   color: string;
   id: number;
 }) => {
-  const ref = useRef<Group>();
+  const ref = useRef<Group>(null);
   const [hover, setHover] = useState<boolean>(false);
   const { setTab, setTabView } = useStore();
 
@@ -33,7 +33,7 @@ const Pointer = ({
 
   return (
     <group
-      ref={ref as any}
+      ref={ref}
       scale={hover ? 3 : 2}
       rotation={[0, 0, Math.PI]}
       onClick={handleClick}

@@ -3,6 +3,7 @@ import DebugCurve from "../../utils/DebugCurve";
 import { CameraControls, PerspectiveCamera } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
+import { useStore } from "../../context";
 
 type CurveCameraProps = {
   debug: boolean;
@@ -30,17 +31,21 @@ const CurveCamera = ({
   const cameraRef = useRef<PC>(null);
   const controlsRef = useRef<CameraControls>(null);
 
+  const { tabView } = useStore()
+
   const targetScrollProgress = useRef(scrollProgress);
 
+  const handleWheel = (e: WheelEvent) => {
+    const v = targetScrollProgress.current + Math.sign(e.deltaY) * scrollSpeed;
+    if (v >= 0) {
+      targetScrollProgress.current = v
+    } else {
+      targetScrollProgress.current = -1 * v
+    }
+  };
+
+
   useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      const v = targetScrollProgress.current + Math.sign(e.deltaY) * scrollSpeed;
-      if (v >= 0) {
-        targetScrollProgress.current = v
-      } else {
-        targetScrollProgress.current = -1 * v
-      }
-    };
 
     const handleForwardMovement = () => {
       targetScrollProgress.current += 1 * scrollSpeed * 3
@@ -55,13 +60,17 @@ const CurveCamera = ({
     document.getElementById(forwardButtonId)?.addEventListener("click", handleForwardMovement)
     document.getElementById(backwardButtonId)?.addEventListener("click", handleBackwardMovement)
 
-    document.addEventListener("wheel", handleWheel);
+    if (tabView) {
+      document.removeEventListener('wheel', handleWheel)
+    } else {
+      document.addEventListener("wheel", handleWheel)
+    }
     return () => {
       document.removeEventListener("wheel", handleWheel);
       document.getElementById(forwardButtonId)?.removeEventListener("click", handleForwardMovement)
       document.getElementById(backwardButtonId)?.removeEventListener("click", handleBackwardMovement)
     };
-  }, []);
+  }, [tabView]);
 
   useFrame(() => {
     if (cameraRef.current) {
