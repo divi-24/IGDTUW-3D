@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { Context } from "../types/Context";
 import { INFO_BOXES_DATA } from "../constant/infoBox";
 import { preset } from "../constant/preset";
@@ -42,6 +42,9 @@ export const Provider = ({ children }: ProviderProps) => {
     tabView,
     setTabView
   };
+
+  useEffect(() => console.log("ye dekh -> https://fr.tusharr.xyz/"), [])
+
   return <AppContext.Provider value={store}>{children}</AppContext.Provider>;
 };
 

@@ -5,4 +5,5 @@ export interface InfoBox {
     images?: string[],
     text?: string
     color?: string
+    component?: () => JSX.Element
 }

@@ -1,11 +1,12 @@
 import { InfoBox } from "../types/InfoBox";
+import Contributors from "../components/tab/Contributors"
 
 export const INFO_BOXES_DATA: InfoBox[] = [
     {
         key: 0,
         name: "IGDTUW 3D MAP",
         coordinates: [2.5, 3.5, 114.3],
-        text: "A fully interactive and immersive 3D campus map for Indira Gandhi Delhi Technical University for Women (IGDTUW), designed to offer a realistic and detailed virtual tour experience. Built using advanced 3D rendering technologies, this project aims to provide users with a comprehensive and engaging way to explore the IGDTUW campus virtually.\n\nContributors 🌟 :-\n<p>Three.js & Web GL team -</p><ul><li><a href=\"https://tusharr.xyz/\" target=\"__blank\">Tushar</a></li><li>Shanjan</li><li>Divi</li><li>Aditya</li></ul>\n<p>Base Coding Team</p><ul><li>Anisha</li><li>Hitansha</li><li>Chhavi</li><li>Lehar</li></ul>\n<p>Blender Team</p><ul><li>Aditya</li><li>Divyansh</li><li>Priyanshi</li><li>Purva</li><li>Ariza</li><li>Nishtha</li><li>Aadhya</li><li>Anushka</li><li>Rakshita</li><li>Tushar</li></ul>\n<p>Pictures & Animation Team</p><ul><li>Chhavi</li><li>Lehar</li><li>Sunandhita</li><li>Purva</li></ul>"
+        component: Contributors 
     },
     {
         key: 1,

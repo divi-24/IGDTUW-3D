@@ -25,12 +25,13 @@ const Modal = ({ data, view, setView }: InfoModalProps) => {
                 </div>
 
                 <div className="modal-content">
-                    {data?.text?.split("\n").map(line => (
-                        <>
-                            <div dangerouslySetInnerHTML={{ __html: line }}></div>
-                            <br />
-                        </>
-                    ))}
+                    {data?.component ? <data.component /> :
+                        data?.text?.split("\n").map(line => (
+                            <>
+                                <div dangerouslySetInnerHTML={{ __html: line }}></div>
+                                <br />
+                            </>
+                        ))}
                 </div>
             </div>
         </>
