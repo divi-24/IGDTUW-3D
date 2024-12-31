@@ -52,8 +52,11 @@ const CurveCamera = ({
     }
 
     const handleBackwardMovement = () => {
-      if (targetScrollProgress.current > 0) {
-        targetScrollProgress.current -= -1 * scrollSpeed * 3
+      const v = targetScrollProgress.current - 3 * scrollSpeed;
+      if (v >= 0) {
+        targetScrollProgress.current = v
+      } else {
+        targetScrollProgress.current = 0
       }
     }
 
