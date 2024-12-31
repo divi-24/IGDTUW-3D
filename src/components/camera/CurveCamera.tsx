@@ -101,8 +101,8 @@ const CurveCamera = ({
           if (savedProgressRef.current === null) {
             const currentPos = cameraRef.current.position.clone();
             
-            // Always start from front of building (facing -Z direction)
-            const initialAngle = Math.PI; // Start from front
+            // Calculate angle to approach building from front
+            const targetAngle = Math.PI; // Start from front (180 degrees)
             
             savedProgressRef.current = scrollProgress;
             movementPhaseRef.current = {
@@ -110,7 +110,7 @@ const CurveCamera = ({
               startPosition: currentPos,
               progress: 0,
               startedFromPath: orbitAngleRef.current === 0,
-              initialAngle: initialAngle
+              initialAngle: targetAngle
             };
           }
 
@@ -119,15 +119,13 @@ const CurveCamera = ({
           const cameraHeight = 20;
 
           if (movementPhaseRef.current?.active) {
-            // Much slower movement
             movementPhaseRef.current.progress += 0.001;
             const t = Math.min(movementPhaseRef.current.progress, 1);
             
-            // Gentler easing for steadier motion
-            const easeT = t * t * (3 - 2 * t); // Smoothstep easing
+            const easeT = t * t * (3 - 2 * t);
 
-            // Calculate smooth orbit angle with slower rotation
-            const orbitAngle = movementPhaseRef.current.initialAngle + (easeT * Math.PI * 0.2);
+            // Always rotate clockwise from front
+            const orbitAngle = movementPhaseRef.current.initialAngle + (easeT * Math.PI * 0.5);
             orbitAngleRef.current = orbitAngle;
 
             const targetPosition = new Vector3(
@@ -136,7 +134,6 @@ const CurveCamera = ({
               selectedBox.coordinates[2] + Math.sin(orbitAngle) * radius
             );
 
-            // Steady interpolation
             cameraRef.current.position.copy(
               movementPhaseRef.current.startPosition.clone().lerp(targetPosition, easeT)
             );
