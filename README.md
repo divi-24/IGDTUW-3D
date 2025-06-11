@@ -112,49 +112,7 @@ This project has been a collaborative effort with contributions from several tal
 ### Deepak Gupta - [LEAD DEVELOPER & PROJECT CREATOR](https://github.com/divi-24)
 The visionary behind this project, responsible for overseeing the development, structuring, and implementation of core features.
 
----
-
-### Team Coding
-The Coding team has been instrumental in writing the main code for this project, ensuring a seamless user experience.
-
-- **CHHAVI** - (https://github.com/chhavibhalla)
-- **SHANJAN(TEAM HEAD)** - (https://github.com/shnjnmkkr) 
-- **TUSHAR** - (https://github.com/tusharsinghbisht)
-- **HITANSHA** - (https://github.com/Hits-p)
-- **PALAK** - (https://github.com/PalakChadha27)
-- **LEHAR** - (https://github.com/butterflylara)
-- **ANISHA** - (https://github.com/AnishaGupta-tech)
----
-
-### Team Blender
-The Blender team worked on creating the 3D models that bring this campus map to life.
-
-- **PRIYANSHI(TEAM HEAD)** - (https://github.com/panshilovesicecream)
-- **NISHTHA** - (https://github.com/nishtha-22)
-- **ARIZA** - (https://github.com/aziraxariza)
-- **PURVA** - (https://github.com/Antarctica1234)
-- **AADHYA** - (https://github.com/aadhyaavermaa)
-- **DIVYANSH** -(https://github.com/Lordvaderani)
-- **ANUSHKA** - (https://github.com/anushkayadav0901)
-- **ADITYA** - (https://github.com/estrizal)
-- **RAKSHITA** -(https://github.com/rakshitatagra)
-
----
-
-### Team Pictures and Animation
-The Pictures and Animation team enhanced the visual appeal of the project through stunning images and smooth animations.
-
-- **CHHAVI(TEAM HEAD)** - (https://github.com/chhavibhalla)
-- **SUNANDITHA** - (https://github.com/4563kr)
-- **LEHAR** - (https://github.com/butterflylara)
-- **PURVA** - (https://github.com/Antarctica1234)
-
-
----
-
 And a huge shoutout to the open-source community for their support and tools like **Three.js**, **GSAP**, and **Blender**, which made this project possible! 🎉
-
----
 
 ### Want to See Your Name Here?
 Contribute to the project and be part of the acknowledgment section! 🌟
