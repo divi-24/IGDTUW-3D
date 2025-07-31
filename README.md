@@ -254,14 +254,5 @@ IGDTUW-3D-Map/
 
 This project is licensed under the MIT License. You’re free to use, modify, and distribute it. Refer to the LICENSE file for more details.
 
----
-
-## 📧 Contact
-
-For queries or collaboration opportunities, feel free to reach out to:
-- Deepak Gupta
-  - GitHub: [divi-24](https://github.com/divi-24)
-  - Email: divi2749@gmail.com
-
 Let’s build a community-driven project and make this the go-to platform for exploring IGDTUW virtually! 🚀✨
 ``
