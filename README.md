@@ -107,18 +107,6 @@ We welcome contributions from the community to enhance this project further! Her
 
 ## 📜 Acknowledgments
 
-This project has been a collaborative effort with contributions from several talented individuals. Special thanks to:
-
-### Deepak Gupta - [LEAD DEVELOPER & PROJECT CREATOR](https://github.com/divi-24)
-The visionary behind this project, responsible for overseeing the development, structuring, and implementation of core features.
-
----
-
-
-
-
-
-
 ### Team Coding
 
 
